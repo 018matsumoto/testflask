@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/picnic.min.css') }}">
+    <title>Todoあぷーり</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="brand">
+            <span>📝 Todoあぷーり</span>
+        </a>
+        <input id="bmenub" type="checkbox" class="show">
+        <label for="bmenub" class="burger pseudo button">&#8801;</label>
+
+        <div class="menu">
+            <a href="/about" class="button pseudo">📖 About</a>
+            <a href="/help" class="button pseudo">❓ Help</a>
+        </div>
+    </nav>
+    <main style="max-width: 960px; min-height: 85%; padding: 5em 1em 0; margin: auto;">
+        {% block body %}{% endblock %}
+    </main>
+    {% block foot %}{% endblock %}
+    <footer style="text-align: center; padding: 1em 0;">
+        <p>Copyright © NextBack inc.</p>
+    </footer>
+</body>
+
+</html>

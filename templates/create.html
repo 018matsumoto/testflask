@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block body %}
+<h2>New Task ✜</h2>
+<form action="/" method="POST">
+    <fieldset class="flex one">
+        <label for="title">
+            Title : 
+            <input type="text" name="title" placeholder="Todoを入力してください。">
+        </label>
+        <label for="detail">
+            Detail : 
+            <input type="text" name="detail">
+        </label>
+        <label for="due">
+            Due : 
+            <input type="date" name="due" required>
+        </label>
+    </fieldset>
+    <a class="button pseudo" href="/">Return</a>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

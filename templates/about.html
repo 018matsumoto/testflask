@@ -1,0 +1,51 @@
+{% extends 'common/base.html' %}
+
+{% block body %}
+<h2>About</h2>
+<div class="flex one">
+    <img src="{{ url_for('static', filename='img/about-01-unsplash.jpg') }}">
+    <h3>Hello!</h3>
+    <p>こんにちは！早速のご利用ありがとうございます！</p>
+    <p>
+        <strong>『Todoあぷーり』</strong>は数あるタスク管理アプリの中でも群を抜いて高品質であり、お客様に最高のサービス体験をご提供いたします！
+        真新しい機能は一切ございません！不必要な機能を搭載することは、高額なサービス料をご負担いただくだけでなく、
+        お客様の学習負担が増え、日々の多忙なライフワークにとどめの一撃を与えかねません！
+    </p>
+    <p>
+        当アプリでは新たに覚える事は1つもございません！<br>
+        弊社ではお客様に、一切の負担を増やさないよう日々精進！尽力しております！
+    </p>
+    <div style="text-align: center;">
+        <h2>オススメ３大要素</h2>
+        <div class="flex one three-600">
+            <div>
+                <div class="card">
+                    <header>
+                        <h3>🔰 簡単</h3>
+                    </header>
+                    <p>ビックリするぐらいに</p>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <header>
+                        <h3>🚀 高速</h3>
+                    </header>
+                    <p>ビックリするぐらいに</p>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <header>
+                        <h3>💰 安価</h3>
+                    </header>
+                    <p>ビックリするぐらいに</p>
+                </div>
+            </div>
+        </div>
+        <p>全てが揃っています！</p>
+        <p>今なら<strong style="font-size: xx-large;margin: auto 0.5em;color: red;">0円</strong>でご利用いただけます！</p>
+        <p>よろしくお願いします！</p>
+    </div>
+</div>
+{% endblock %}

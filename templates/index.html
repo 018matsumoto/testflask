@@ -1,0 +1,35 @@
+{% extends 'common/base.html' %}
+
+{% block body %}
+<div class="flex one two-700 three-1000">
+    <div class="full">
+        <a class="button" href="/create">New Task ✜</a>
+    </div>
+    {% for post in posts %}
+    <div>
+        <article class="card">
+            <header>
+                <h2>
+                    {{ post.title }}
+                    {% if post.due.date() < today %}
+                    <span class="label error" style="font-size: 0.5em; padding: 0.3em 0.5em; position: absolute; top: 1px; right: 1px;">
+                        期限切れ
+                    </span>
+                    {% endif %}
+                </h2>
+            </header>
+            <footer>
+                <p>Due：{{ post.due.date() }}</p>
+                <a class="button" href="/detail/{{ post.id }}">Detail</a>
+                <a class="button success" href="/update/{{ post.id }}">Update</a>
+                <label class="button error del-btn" for="modal_1" data-post-id="{{ post.id }}">Del</label>
+            </footer>
+        </article>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block foot %}
+{% include 'common/modal.html' %}
+{% endblock %}

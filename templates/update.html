@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block body %}
+<h2>UPDATE ⤴</h2>
+<form action="/update/{{ post.id }}" method="POST">
+    <fieldset class="flex one">
+        <label for="title">
+            Title : 
+            <input type="text" name="title" placeholder="Todoを入力してください。" value={{ post.title }}>
+        </label>
+        <label for="detail">
+            Detail : 
+            <input type="text" name="detail" value={{ post.detail }}>
+        </label>
+        <label for="due">
+            Due : 
+            <input type="date" name="due" value={{ post.due.date() }} required>
+        </label>
+    </fieldset>
+    <a class="button pseudo" href="/">Return</a>
+    <button type="submit" class="success">Change</button>
+</form>
+{% endblock %}

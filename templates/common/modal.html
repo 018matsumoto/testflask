@@ -1,0 +1,33 @@
+<div class="modal">
+    <input id="modal_1" type="checkbox" />
+    <label for="modal_1" class="overlay"></label>
+    <article>
+        <header>
+            <h3>Delete?</h3>
+            <label for="modal_1" class="close">&times;</label>
+        </header>
+        <section class="content">
+            削除しちゃって良いの？
+        </section>
+        <footer>
+            <label for="modal_1" class="button">
+                Cancel
+            </label>
+            <a class="button dangerous" id="del-modal-btn">Del</a>
+        </footer>
+    </article>
+</div>
+
+<script>
+    let postId
+    const delBtns = document.querySelectorAll(".del-btn")
+    delBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            postId = btn.dataset.postId
+        })
+    })
+    const delModalBtn = document.querySelector("#del-modal-btn")
+    delModalBtn.addEventListener("click", () => {
+        window.location = "/delete/" + postId
+    })
+</script>

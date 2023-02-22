@@ -1,0 +1,29 @@
+{% extends 'common/base.html' %}
+
+{% block body %}
+<h2>Detail 👁</h2>
+<div class="flex one">
+    <div>
+        <article class="card">
+            <header>
+                <h2>
+                    {{ post.title }}
+                    <span style="font-size: 0.5em;">期限：{{ post.due.date()}}</span>
+                    {% if post.due.date() < today %}
+                    <span class="label error" style="font-size: 0.5em; padding: 0.3em 0.5em; position: absolute; top: 1px; right: 1px;">
+                        期限切れ
+                    </span>
+                    {% endif %}
+                </h2>
+            </header>
+            <footer>
+                <p>{{ post.detail }}</p>
+                <div>
+                    <a class="button pseudo" href="/">Return</a>
+                    <a class="button success" href="/update/{{ post.id }}">Update</a>
+                </div>
+            </footer>
+        </article>
+    </div>
+</div>
+{% endblock %}
