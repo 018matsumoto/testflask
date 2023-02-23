@@ -1,0 +1,10 @@
+runtime: python310
+
+handlers:
+  # 静的フォルダへのルーティング
+- url: /static
+  static_dir: static
+
+  # 残り全てのルーティング
+- url: /.*
+  script: auto
